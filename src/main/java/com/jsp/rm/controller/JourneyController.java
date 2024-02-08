@@ -13,42 +13,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jsp.rm.entity.User;
-import com.jsp.rm.service.UserService;
+import com.jsp.rm.entity.Journey;
+import com.jsp.rm.service.JourneyService;
 import com.jsp.rm.util.ResponseStructure;
 
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/journey")
+public class JourneyController {
 	
 	@Autowired
-	UserService us;   
+	JourneyService js;   
 	
 	@PostMapping("/save")
-	public ResponseEntity<ResponseStructure<User>> saveUser(@RequestBody User user){
-		return  us.save(user) ;
+	public ResponseEntity<ResponseStructure<Journey>> saveJourney(@RequestBody Journey journey){
+		return  js.save(journey) ;
 	}
 
 	
 	@PatchMapping("/update")
-	public ResponseEntity<ResponseStructure<User>> updatedUser(@RequestBody User user){
-		return  us.update(user) ;
+	public ResponseEntity<ResponseStructure<Journey>> updatedJourney(@RequestBody Journey journey){
+		return  js.update(journey) ;
 	}
 	
 	@DeleteMapping("/delete")
-	public ResponseEntity<ResponseStructure<String>> deleteUser(@RequestBody User user){
-		return  us.delete(user.getId()) ;
+	public ResponseEntity<ResponseStructure<String>> deleteJourney(@RequestBody Journey journey){
+		return  js.delete(journey.getId()) ;
 	}
 	
 	@GetMapping("/find/{id}")
-	public ResponseEntity<ResponseStructure<User>> findUser(@PathVariable int id){
-		return  us.findUserById(id) ;
+	public ResponseEntity<ResponseStructure<Journey>> findJourney(@PathVariable int id){
+		return  js.findJourneyById(id) ;
 	}
 	
 	@GetMapping("/findall")
-	public ResponseEntity<ResponseStructure<List<User>>> findAllUser(){
-		return  us.findAllUser() ;
+	public ResponseEntity<ResponseStructure<List<Journey>>> findAllJourney(){
+		return  js.findAllJourney() ;
 	}
 	
 

@@ -1,5 +1,6 @@
 package com.jsp.rm.daoimp;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,7 @@ public class TicketDaoImp implements TicketDao{
 		return tr.save(ticket);
 	}
 
-	@Override
-	public Ticket update(Ticket ticket) {
-		return tr.save(ticket);
-	}
-
+	
 	@Override
 	public void delete(int id) {
 		 tr.deleteById(id);;
@@ -35,9 +32,8 @@ public class TicketDaoImp implements TicketDao{
 	}
 
 	@Override
-	public Ticket FindAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Ticket> FindAll() {
+		return tr.findAll();
 	}
 
 }

@@ -1,5 +1,8 @@
 package com.jsp.rm.daoimp;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,32 +17,22 @@ public class JourneyDaoImp  implements JourneyDao{
 
 	@Override
 	public Journey save(Journey journey) {
-		// TODO Auto-generated method stub
-		return null;
+		return jr.save(journey);
 	}
 
 	@Override
-	public Journey update(Journey journey) {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(int id) {
+		jr.deleteById(id);
 	}
 
 	@Override
-	public Journey delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Journey> findById(int id) {
+		return jr.findById(id);
 	}
 
 	@Override
-	public Journey findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Journey FindAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Journey> FindAll() {
+		return jr.findAll();
 	}
 	
 	

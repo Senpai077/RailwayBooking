@@ -1,5 +1,8 @@
 package com.jsp.rm.dao;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import com.jsp.rm.entity.Journey;
@@ -8,8 +11,7 @@ import com.jsp.rm.entity.Journey;
 public interface JourneyDao {
 
 	Journey save(Journey journey);
-	Journey update(Journey journey);
-	Journey delete(int id);
-	Journey findById(int id);
-	Journey FindAll();
+	void delete(int id);
+	Optional<Journey> findById(int id);
+	List<Journey> FindAll();
 }

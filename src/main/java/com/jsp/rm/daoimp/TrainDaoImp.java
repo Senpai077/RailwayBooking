@@ -1,5 +1,8 @@
 package com.jsp.rm.daoimp;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,33 +16,24 @@ public class TrainDaoImp implements TrainDao {
 	TrainRepository tr;
 
 	@Override
-	public Train save(Train trian) {
-		// TODO Auto-generated method stub
-		return null;
+	public Train save(Train train) {
+		return tr.save(train);
+	}
+
+	
+	@Override
+	public void delete(int id) {
+		tr.deleteById(id);
 	}
 
 	@Override
-	public Train update(Train trian) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Train> findById(int id) {
+		return tr.findById(id);
 	}
 
 	@Override
-	public Train delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Train findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Train FindAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Train> FindAll() {
+		return tr.findAll();
 	}
 
 }

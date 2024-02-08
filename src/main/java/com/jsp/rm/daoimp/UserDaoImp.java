@@ -1,5 +1,8 @@
 package com.jsp.rm.daoimp;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,27 +21,19 @@ public class UserDaoImp implements UserDao {
 	}
 
 	@Override
-	public User update(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(int id) {
+		ur.deleteById(id);
+		
 	}
 
 	@Override
-	public User delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<User> findById(int id) {
+		return ur.findById(id);
 	}
 
 	@Override
-	public User findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public User FindAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> FindAll() {
+		return ur.findAll();
 	}
 
 }

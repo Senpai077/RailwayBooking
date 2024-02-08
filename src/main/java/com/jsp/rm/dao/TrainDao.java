@@ -1,5 +1,8 @@
 package com.jsp.rm.dao;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import com.jsp.rm.entity.Train;
@@ -8,8 +11,7 @@ import com.jsp.rm.entity.Train;
 public interface TrainDao {
 
 	Train save(Train trian);
-	Train update(Train trian);
-	Train delete(int id);
-	Train findById(int id);
-	Train FindAll();
+	void delete(int id);
+	Optional<Train> findById(int id);
+	List<Train> FindAll();
 }

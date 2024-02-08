@@ -1,5 +1,8 @@
 package com.jsp.rm.dao;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import com.jsp.rm.entity.User;
@@ -8,9 +11,8 @@ import com.jsp.rm.entity.User;
 public interface UserDao {
 	
 	User save(User user);
-	User update(User user);
-	User delete(int id);
-	User findById(int id);
-	User FindAll();
+	void delete(int id);
+	Optional<User> findById(int id);
+	List<User> FindAll();
 
 }

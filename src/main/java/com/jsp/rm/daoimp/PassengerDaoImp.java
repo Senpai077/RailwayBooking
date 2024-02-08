@@ -1,5 +1,8 @@
  package com.jsp.rm.daoimp;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,32 +17,23 @@ public class PassengerDaoImp implements PassengerDao {
 
 	@Override
 	public Passenger save(Passenger passenger) {
-		// TODO Auto-generated method stub
-		return null;
+		return pr.save(passenger);
+	}
+
+
+	@Override
+	public void delete(int id) {
+		pr.deleteById(id);
 	}
 
 	@Override
-	public Passenger update(Passenger passenger) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Passenger> findById(int id) {
+		return pr.findById(id);
 	}
 
 	@Override
-	public Passenger delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Passenger findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Passenger FindAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Passenger> FindAll() {
+		return pr.findAll();
 	}
 
 }
