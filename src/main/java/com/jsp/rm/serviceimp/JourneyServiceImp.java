@@ -1,5 +1,7 @@
 package com.jsp.rm.serviceimp;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,13 +27,14 @@ public class JourneyServiceImp implements JourneyService {
 
 	@Override
 	public ResponseEntity<ResponseStructure<Journey>> save(Journey journey) {
-
+		
 		Journey savedJourney = jd.save(journey);
+		
 		if (savedJourney != null) {
 			ResponseStructure<Journey> structure = new ResponseStructure<>();
 			structure.setStatusCode(HttpStatus.CREATED.value());
 			structure.setMessage("Journey is saved successfully");
-			structure.setData(jd.save(savedJourney));
+			structure.setData(savedJourney);
 
 			return new ResponseEntity<ResponseStructure<Journey>>(structure, HttpStatus.CREATED);
 		} else {

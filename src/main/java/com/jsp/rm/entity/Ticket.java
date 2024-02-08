@@ -1,5 +1,6 @@
 package com.jsp.rm.entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -21,6 +22,7 @@ public class Ticket {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	private LocalDate date;
 	private double totalPrice;
 	@OneToOne
 	private Journey journey;

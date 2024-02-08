@@ -1,6 +1,6 @@
 package com.jsp.rm.entity;
 
-import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -23,7 +23,7 @@ public class Journey {
 	private int id;
 	private String startFrom;
 	private String destination;
-	private LocalDate date;
+	private LocalTime time;
 	private double price;
 	
 	@ManyToMany
